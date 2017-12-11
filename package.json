@@ -1,0 +1,24 @@
+{
+  "name": "utilities",
+  "version": "1.0.0",
+  "description": "NodeJS code to deploy the changes to Salesforce utility org",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.ddhive.com:7999/sip/utilities.git"
+  },
+  "keywords": [
+    "deploy"
+  ],
+  "author": "Victor",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jsforce-deploy": "^1.1.2",
+    "gulp-zip": "^3.2.0",
+    "xmlbuilder": "^8.2.2"
+  }
+}
