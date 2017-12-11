@@ -1,14 +1,14 @@
 {
-  "name": "utilities",
+  "name": "lightning-training",
   "version": "1.0.0",
-  "description": "NodeJS code to deploy the changes to Salesforce utility org",
+  "description": "Sample codebase for training",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.ddhive.com:7999/sip/utilities.git"
+    "url": "https://github.com/victorabraham/Lightning-Training.git"
   },
   "keywords": [
     "deploy"
