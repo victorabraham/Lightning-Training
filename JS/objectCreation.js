@@ -1,4 +1,5 @@
 
+console.log('\x1Bc');
 //Bracket notaion
 var product = {};
 product.name = 'car';
@@ -38,9 +39,3 @@ Object.defineProperty(obj, 'name', {
   configurable: true
 });
 console.log(obj);
-
-
-
-
-
-console.log('###############################################################################')
