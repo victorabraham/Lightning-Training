@@ -16,6 +16,15 @@ npm i -g gulp
 
 
 Set environment variables and deploy sample code to sandbox
+
+Mac Users
 ```
 SF_USERNAME=yourUsernameHere SF_PASSWORD=yourPasswordAndSecurityTokenHere gulp deployToSF
+```
+
+Windows Users
+```
+setx SF_USERNAME=yourUsernameHere 
+setx SF_PASSWORD=yourPasswordAndSecurityTokenHere 
+gulp deployToSF
 ```
