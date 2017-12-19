@@ -24,7 +24,7 @@ SF_USERNAME=yourUsernameHere SF_PASSWORD=yourPasswordAndSecurityTokenHere gulp d
 
 Windows Users
 ```
-setx SF_USERNAME=yourUsernameHere 
-setx SF_PASSWORD=yourPasswordAndSecurityTokenHere 
+SET SF_USERNAME=yourUsernameHere 
+SET SF_PASSWORD=yourPasswordAndSecurityTokenHere 
 gulp deployToSF
 ```
