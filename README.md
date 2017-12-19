@@ -5,6 +5,7 @@ Training materials for lightning
 
 Install Nodejs
 https://nodejs.org/en/download/
+
 Install Git
 https://git-scm.com/downloads
 
