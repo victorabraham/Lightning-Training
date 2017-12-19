@@ -1,0 +1,73 @@
+<apex:page controller="AccountContactController" docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false">
+<apex:slds />
+<apex:form >
+ <div class="slds-page-header">
+              <div class="slds-media">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-account" title="Description of icon when needed">
+                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS212, '/assets/icons/standard-sprite/svg/symbols.svg#account')}" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h1 class="slds-page-header__title slds-truncate" title="Create Account & Contact">Create Account &amp; Contact</h1>
+                  <p class="slds-text-body_small slds-line-height_reset"></p>
+                </div>
+              </div>
+            </div>
+         <!-- ADD GLOBAL HEADER TEXT -->  
+         <div class="slds-col ">  
+           <!-- ADD TEXT -->  
+           <div class="slds-page-header__title slds-truncate">  
+           </div>  
+         </div>  
+<div class="demo-only slds-align_absolute-center" style="width: 440px;">
+  <div class="slds-form slds-form_compound slds-align-middle">
+    <fieldset class="slds-form-element">
+      <legend class="slds-form-element__label slds-text-title_caps">Location</legend>
+      <div class="slds-form-element__group">
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-2">
+            <label class="slds-form-element__label" for="input-01">Latitude</label>
+            <input type="text" id="input-01" class="slds-input" />
+          </div>
+          <div class="slds-form-element slds-size_1-of-2">
+            <label class="slds-form-element__label" for="input-02">Longitude</label>
+            <input type="text" id="input-02" class="slds-input" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="slds-form-element">
+      <legend class="slds-form-element__label slds-text-title_caps">Address</legend>
+      <div class="slds-form-element__group">
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-1">
+            <apex:outputLabel styleClass="slds-form-element__label">Shipping Street</apex:outputLabel>  
+            <apex:inputTextarea value="{!acc.ShippingStreet}" styleClass="slds-form-element__control slds-textarea"/>  
+          </div>
+        </div>
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-2">
+            <apex:outputLabel styleClass="slds-form-element__label">Shipping City</apex:outputLabel>  
+            <apex:inputText value="{!acc.ShippingCity}" styleClass="slds-form-element__control slds-input"/> 
+          </div>
+          <div class="slds-form-element slds-size_1-of-2">
+            <apex:outputLabel styleClass="slds-form-element__label">Shipping State</apex:outputLabel>  
+            <apex:inputText value="{!acc.ShippingState}" styleClass="slds-form-element__control slds-input"/> 
+          </div>
+        </div>
+        <div class="slds-form-element__row">
+          <div class="slds-form-element slds-size_1-of-2">
+            <apex:outputLabel styleClass="slds-form-element__label">Shipping Postal Code</apex:outputLabel>  
+                   <apex:inputText value="{!acc.ShippingPostalCode}" styleClass="slds-form-element__control slds-input"/> 
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+</apex:form>
+</apex:page>

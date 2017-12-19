@@ -1,0 +1,25 @@
+<apex:page controller="cls_Selectors" showHeader="false" showChat="false">
+  <apex:Slds />
+  <table>
+  <tr>
+    <th>Visualforce</th>
+    <th>LDS</th>
+  </tr>
+  <tr>
+    <td>
+        <apex:form >
+          <apex:outputLabel value="Visualforce Label"></apex:outputLabel>
+          <apex:inputText value="{!str_Input}"/>
+        </apex:form>
+    </td>
+    <td>
+        <div class="slds-form-element">
+            <apex:form >
+              <apex:outputLabel value="Visualforce Label" styleClass="slds-form-element__label"></apex:outputLabel>
+              <apex:inputText styleClass="slds-form-element__control slds-input" value="{!str_Input}"/>
+            </apex:form>      
+        </div>
+    </td>
+  </tr>
+</table>
+</apex:page>
