@@ -9,7 +9,10 @@ https://nodejs.org/en/download/
 Install Git
 https://git-scm.com/downloads
 
-
+Install gulp globally using 
+``` 
+npm i -g gulp 
+```
 
 
 Set environment variables and deploy sample code to sandbox
