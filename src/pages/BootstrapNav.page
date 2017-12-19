@@ -1,0 +1,88 @@
+<apex:page showHeader="false" showChat="false" sidebar="false" standardStylesheets="false">
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+         h5{
+          font-size:12pt;
+          font-weight:bold;
+         }
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto;
+          padding: 10px;
+          }
+          .help-block {
+          display: block;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          color: #737373;
+          font-size: 8pt;
+        }
+    
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default" style="background-color:black;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:white;    margin-right: 650px;">Lightning Bootcamp</a>
+    </div>
+   
+    <ul class="nav navbar-nav">
+      <li><a href="#" style="color:white;">Home</a></li>
+      <li><a href="#" style="color:white;">About</a></li>
+      <li><a href="#" style="color:white;">Contact</a></li>
+      <li><a href="#" style="color:white;" data-toggle="modal" data-target="#exampleModal">Create Profile</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="font-size:bold;">Create Profile</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="grid-container">
+          <div class="grid-item">
+                <label>Name</label>
+                <br/>
+                <input type="text" placeholder="" />
+                <span class="help-block">First Name</span>
+          </div>
+          <div class="grid-item">
+                <label></label>
+                <br/>
+                <input type="text" placeholder="" />
+                <span class="help-block">Last Name</span>
+          </div>
+          <div class="grid-item">
+                <label>Email</label>
+                <br/>
+                <input type="text" placeholder="" />
+                <span class="help-block">example@example.com</span>
+          </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+</apex:page>
