@@ -3,11 +3,13 @@ Training materials for lightning
 
 ## Prerequisites
 
-Install Nodejs if you dont have already
-Install gulp globally using 
-``` 
-npm i -g gulp 
-```
+Install Nodejs
+https://nodejs.org/en/download/
+Install Git
+https://git-scm.com/downloads
+
+
+
 
 Set environment variables and deploy sample code to sandbox
 ```
