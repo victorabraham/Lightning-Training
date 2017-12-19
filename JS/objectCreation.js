@@ -30,8 +30,8 @@ console.log(anotherProduct);
 //var product = {};
 
 
-console.log(Object.keys(product));
 var obj = {};
+console.log(Object.keys(product));
 Object.defineProperty(obj, 'name', {
   value: 'default value',
   writable: true,

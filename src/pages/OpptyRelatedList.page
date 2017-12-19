@@ -1,0 +1,60 @@
+<apex:page standardController="Account" extensions="Ctrl_RelatedLists">
+<!--apex:slds/-->
+<body>
+<apex:form style="margin:0 -10px;">
+    <apex:pageBlock id="tabOpportunities" title="{!$ObjectType.Opportunity.LabelPlural}" helpTitle="{!$ObjectType.Opportunity.LabelPlural} Help" helpUrl="/help/doc/user_ed.jsp?loc=help&amp;target=opp_edit.htm&amp;section=Opportunities&amp;showSplash=true" >
+        <!-- Button and search bar -->
+        <apex:pageBlockButtons location="top">
+            <b><apex:outputLabel value="Search" /></b>&nbsp;
+            
+            <!-- Search -->
+            <apex:inputText value="{!searchTxt}" style="width:100px;" />&nbsp;
+       
+            <!-- Opportunity Type -->
+            <apex:selectList value="{!selFilterOppType}" size="1">
+                <apex:selectOptions value="{!FilterOppType}" />
+            </apex:selectList>
+            
+            <!-- Opportunity "Status" -->
+            <apex:selectList value="{!selFilterOppStatus}" size="1">
+                <apex:selectOptions value="{!FilterOppStatus}" />
+            </apex:selectList>
+            
+            <apex:commandButton value=" > " action="{!searchOpportunities}" rerender="tabOpportunities" status="statSearch" />  
+                <apex:actionStatus id="statSearch">
+                    <apex:facet name="start"><img class="waitingImage" src="{!URLFOR($Resource.imgPack_IconSet, 'Icon16x16_Loading.gif')}" width="16" height="16" style="margin-left:5px;vertical-align:middle;" /></apex:facet>
+                    <apex:facet name="stop"></apex:facet>
+                </apex:actionStatus>
+                
+            &nbsp;&nbsp;
+            <apex:commandButton value="New"  onclick="window.open('{!URLFOR($Action.Opportunity.New, Account.Id)}', '_top');" />
+        </apex:pageBlockButtons>
+
+        <!-- Opportunities table -->
+        <apex:pageblockTable value="{!listWrappedOpps}" var="rec" rows="{!listSize}" styleClass="list" width="100%" rendered="{!listWrappedOpps.size>0}">
+            <apex:column headerValue="Name">
+                    {!rec.obj.Name}
+            </apex:column>            
+            <apex:column headerValue="Account Name">
+                    {!rec.obj.Account.Name}
+            </apex:column> 
+            <apex:column headerValue="Type">
+                    {!rec.obj.Type}
+            </apex:column>
+            <apex:column headerValue="Stage">
+                    {!rec.obj.StageName}
+            </apex:column>
+            <apex:column headerValue="Amount">
+                    {!rec.obj.amount}
+            </apex:column>
+            <apex:column headerValue="Close Date">
+                    {!rec.obj.closedate}
+            </apex:column>
+            <apex:column headerValue="Owner">
+                <apex:commandlink value="{!rec.obj.owner.name}" onclick="window.open('/{!rec.obj.ownerId}','_top');"/>
+            </apex:column>
+        </apex:pageblockTable>
+    </apex:pageBlock>        
+</apex:form>
+</body>
+</apex:page>
