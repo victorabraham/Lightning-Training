@@ -9,9 +9,9 @@ https://nodejs.org/en/download/
 Install Git
 https://git-scm.com/downloads
 
-Go to terminal/command prompt and execute commands listed below,
+Go to terminal/command prompt and execute the commands listed below,
 
-Install gulp globally using 
+Install gulp globally (Mac users might need sudo in front of the command)
 ``` 
 npm i -g gulp 
 ```
