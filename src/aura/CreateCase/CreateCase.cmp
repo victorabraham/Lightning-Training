@@ -9,6 +9,9 @@
     <aura:attribute name="priority" type="String[]" default="Low,Medium,High" />
     <aura:attribute name="statuses" type="String[]" default="Open,Closed" />
     <aura:attribute name="isOpen" type="boolean" default="false"/>
+    
+    <aura:registerEvent name="caseCreatedEvent" type="c:CaseCreated"/>
+    
     <div class="slds-page-header">
         <div class="slds-media">
             <div class="slds-media__figure">
@@ -50,7 +53,7 @@
         </div>
         <div class="slds-form-element__row">  
             <div class="slds-form-element">
-                <ui:inputTextArea  aura:id="Description" label="Description"
+                <ui:inputTextArea aura:id="Description" label="Description"
                                   class="slds-input"
                                   labelClass="slds-form-element__label"
                                   value="{!v.newCase.Description}"
@@ -58,13 +61,13 @@
                                   resizable="false"/>
             </div>
         </div>
-        <div class="slds-docked-form-footer">    
+        <div class="slds-button-group">    
             <lightning:button label="Submit Case" 
                               class="slds-button slds-button--brand"
                               onclick="{!c.createCaseCall}"/>
-            <lightning:button label="Cancel" 
-                              class="slds-button slds-button--neutral"
-                              onclick="{!c.Close}"/>
+            <!--lightning:button label="Cancel" 
+                              class="slds-button"
+                              onclick="{!c.Close}"/-->
         </div> 
     </div>
     <aura:if isTrue="{!v.isOpen}">

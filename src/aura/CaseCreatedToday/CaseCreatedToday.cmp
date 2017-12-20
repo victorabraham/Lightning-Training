@@ -1,0 +1,35 @@
+<aura:component controller="CaseTilesController">
+    	<aura:attribute name="caseList" type="object[]"/>
+    	<aura:attribute name="count" type="Integer" default="0"/>
+    
+    	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    	<aura:handler event="c:CaseCreated" action="{!c.handleCaseCreatedEvent}"/>
+    
+        <div class="slds-page-header">
+            <div class="slds-media">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                        
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <center><h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Case Created Today">#{!v.count} Cases Created Today</h1></center>
+                    <p class="slds-text-body_small slds-line-height_reset"></p>
+                </div>
+            </div>
+        </div>
+    	<div class="slds-grid">
+        	<div class="slds-size_1-of-4">
+            </div>
+            <div class="slds-size_2-of-4">
+                <ul class="slds-has-dividers_bottom-space">
+                    <aura:iteration items="{!v.caseList}" var="case">
+                        <c:CaseTile subject="{!case.Subject}" priority="{!case.Priority}" status="{!case.Status}" description="{!case.Description}"/>
+                    </aura:iteration>
+                </ul>
+            </div>
+            <div class="slds-size_1-of-4">
+            </div>
+        </div>
+</aura:component>

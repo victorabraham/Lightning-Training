@@ -1,0 +1,15 @@
+<aura:component >
+	<aura:attribute name="subject" type="String"/>
+    <aura:attribute name="priority" type="String"/>
+    <aura:attribute name="status" type="String"/>
+    <aura:attribute name="description" type="String"/>
+    <li class="slds-item">
+            <lightning:tile label="{! 'Subject : '+ v.subject}">
+                <ul class="slds-list_vertical">
+                    <li class="slds-item">Priority : {!v.priority}</li>
+                    <li class="slds-item">Status : {!v.status}</li>
+                    <li class="slds-item">Description : {!v.description}</li>
+                </ul>
+            </lightning:tile>
+    </li>
+</aura:component>

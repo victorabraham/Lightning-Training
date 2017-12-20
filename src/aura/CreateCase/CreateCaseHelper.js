@@ -12,6 +12,10 @@
                 var name = response.getReturnValue();
                 component.set("v.isOpen", true);
             }
+        
+        	var appEvent = $A.get("e.c:CaseCreated");
+            appEvent.setParams({ "message" : "case Created" });
+            appEvent.fire();
         });
         $A.enqueueAction(action);
     }
