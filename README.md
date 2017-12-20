@@ -1,7 +1,7 @@
 # Lightning-Training
 Training materials for lightning
 
-## Prerequisites
+## Initial Setup
 
 Install Nodejs
 https://nodejs.org/en/download/
@@ -21,7 +21,13 @@ Clone the repository
 git clone https://github.com/victorabraham/Lightning-Training.git
 ```
 
-## Deploying Code
+Navigate to the folder and install dependencies
+``` 
+cd Lightning-Training
+npm i
+```
+
+## Deploying Updates to code
 
 Navigate to Lightning-Training folder and Pull latest code from repository
 ``` 
