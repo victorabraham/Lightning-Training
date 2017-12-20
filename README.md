@@ -29,7 +29,7 @@ npm i
 
 ## Deploying Updates to code
 
-Navigate to Lightning-Training folder and Pull latest code from repository
+Open terminal/command prompt and navigate to Lightning-Training folder and Pull latest code from repository
 ``` 
 cd Lightning-Training
 git pull
