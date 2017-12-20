@@ -1,0 +1,92 @@
+<aura:component controller="cls_CreateCase">
+    <aura:attribute name="newCase" type="Case"
+                    default="{ 'sobjectType': 'Case',
+                             'Subject': '',
+                             'Description':'',
+                             'Priority':'',
+                             'Status':'',
+                             }"/>
+    <aura:attribute name="priority" type="String[]" default="Low,Medium,High" />
+    <aura:attribute name="statuses" type="String[]" default="Open,Closed" />
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                    
+                </span>
+            </div>
+            <div class="slds-media__body">
+                <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Create Case">Create Case</h1>
+                <p class="slds-text-body_small slds-line-height_reset"></p>
+            </div>
+        </div>
+    </div>
+    <div class="slds-panel slds-grid slds-grid--vertical slds-nowrap slds-form--compound slds-p-top_medium slds-p-left_medium" aria-labelledby="newCaseForm">      
+        <div class="slds-form-element__row">  
+            <div class="slds-form-element">
+                <ui:inputText aura:id="Subject" label="Subject"
+                              class="slds-input"
+                              labelClass="slds-form-element__label"
+                              value="{!v.newCase.Subject}"
+                              required="true"/>
+            </div>
+        </div>
+        <div class="slds-form-element__row">
+            <lightning:select name="select" label="Priority" aura:id="casePriority" required="true" value="{!v.newCase.Priority}">
+                <option value="">-- None --</option>
+                <aura:iteration items="{!v.priority}" var="priority">
+                    <option value="{!priority}" text="{!priority}"></option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+        <div class="slds-form-element__row">
+            <lightning:select name="select" label="Status" aura:id="caseStatus" required="true" value="{!v.newCase.Status}">
+                <option value="">-- None --</option>
+                <aura:iteration items="{!v.statuses}" var="status">
+                    <option value="{!status}" text="{!status}"></option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+        <div class="slds-form-element__row">  
+            <div class="slds-form-element">
+                <ui:inputTextArea  aura:id="Description" label="Description"
+                                  class="slds-input"
+                                  labelClass="slds-form-element__label"
+                                  value="{!v.newCase.Description}"
+                                  required="true"
+                                  resizable="false"/>
+            </div>
+        </div>
+        <div class="slds-docked-form-footer">    
+            <lightning:button label="Submit Case" 
+                              class="slds-button slds-button--brand"
+                              onclick="{!c.createCaseCall}"/>
+            <lightning:button label="Cancel" 
+                              class="slds-button slds-button--neutral"
+                              onclick="{!c.Close}"/>
+        </div> 
+    </div>
+    <aura:if isTrue="{!v.isOpen}">
+        <div role="dialog" tabindex="-1" aria-labelledby="header99" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header slds-theme_success slds-theme_alert-texture">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModel}">
+                        X
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Success</h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <p><b>A case has been created successfully!
+                        </b>
+                    </p>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.closeModel}">Ok</button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+</aura:component>
