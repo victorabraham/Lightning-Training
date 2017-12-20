@@ -9,11 +9,25 @@ https://nodejs.org/en/download/
 Install Git
 https://git-scm.com/downloads
 
+Go to terminal/command prompt and execute commands listed below,
+
 Install gulp globally using 
 ``` 
 npm i -g gulp 
 ```
 
+Clone the repository
+``` 
+git clone https://github.com/victorabraham/Lightning-Training.git
+```
+
+## Deploying Code
+
+Navigate to Lightning-Training folder and Pull latest code from repository
+``` 
+cd Lightning-Training
+git pull
+```
 
 Set environment variables and deploy sample code to sandbox
 
