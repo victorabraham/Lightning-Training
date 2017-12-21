@@ -1,0 +1,10 @@
+.THIS {
+    border: 5px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(216, 237, 255);
+}
+
+.THIS .view-panel {
+    padding: 20px;
+}
