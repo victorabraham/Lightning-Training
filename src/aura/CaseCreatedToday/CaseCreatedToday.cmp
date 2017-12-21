@@ -19,13 +19,13 @@
                 </div>
             </div>
         </div>
-    	<div class="slds-grid">
+    	<div class="slds-grid defaultbackground">
         	<div class="slds-size_1-of-4">
             </div>
             <div class="slds-size_2-of-4">
                 <ul class="slds-has-dividers_bottom-space">
                     <aura:iteration items="{!v.caseList}" var="case">
-                        <c:CaseTile subject="{!case.Subject}" priority="{!case.Priority}" status="{!case.Status}" description="{!case.Description}"/>
+                        <c:CaseTile recordId="{!case.Id}" subject="{!case.Subject}" priority="{!case.Priority}" status="{!case.Status}" description="{!case.Description}"/>
                     </aura:iteration>
                 </ul>
             </div>
