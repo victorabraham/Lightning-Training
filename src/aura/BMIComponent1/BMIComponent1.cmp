@@ -1,0 +1,90 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="BMICalculator">
+	<aura:attribute name="height" type="Decimal" />
+	<aura:attribute name="weight" type="Decimal" /> 
+    <aura:attribute name="comments" type="String" />
+
+	<aura:attribute name="bmi" type="Decimal" />     
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="bmi-wrapper">
+        <div class="slds-form slds-form_stacked">
+          <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <!--<input type="text" id="input-id-01" class="slds-input" placeholder="Placeholder Text" />-->
+                  <ui:inputNumber aura:id="height"  class="slds-input" label="Height(m)" value="{!v.height}"/>
+              </div>              
+          </div> 
+          <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <!--<input type="text" id="input-id-01" class="slds-input" placeholder="Placeholder Text" />-->
+		          <ui:inputNumber aura:id="weight" class="slds-input" label="Weight(lb)" value="{!v.weight}"/>
+              </div>              
+          </div>
+          <div class="slds-form-element">
+              <div class="slds-form-element__control">
+                  <lightning:button label="Calculate BMI" onclick="{!c.calculate}"/>
+              </div>
+            </div>
+        </div>
+        
+        <aura:if isTrue="{! !empty(v.bmi)}">
+            <div aura:id="display" class="bmi-message">
+	            Your BMI is <b>{!v.bmi}</b>
+            </div>
+            <div aura:id="displayTable">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                <tr class="slds-text-title_caps">
+                <th scope="col">
+                <div class="slds-truncate" title="Height">Height</div>
+                </th>
+                <th scope="col">
+                <div class="slds-truncate" title="Weight">Weight Name</div>
+                </th>
+                <th scope="col">
+                <div class="slds-truncate" title="Ideal BMI">Ideal BMI</div>
+                </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <th scope="row" data-label="Opportunity Name">
+                <div class="slds-truncate" title="1.72">1.72</div>
+                </th>
+                <td data-label="Account Name">
+                <div class="slds-truncate" title="150">150</div>
+                </td>
+                <td data-label="Close Date">
+                <div class="slds-truncate" title="20.0">20.0</div>
+                </td>
+                </tr>
+                <tr>
+                <th scope="row" data-label="Opportunity Name">
+                <div class="slds-truncate" title="1.72">1.72</div>
+                </th>
+                <td data-label="Account Name">
+                <div class="slds-truncate" title="140">140</div>
+                </td>
+                <td data-label="Close Date">
+                <div class="slds-truncate" title="19.0">19.0</div>
+                </td>
+                </tr>
+                </tbody>
+                </table> 
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="textarea-id-01">Textarea Label</label>
+                <div class="slds-form-element__control">
+                    <lightning:textarea aura:id="textarea-id-01" placeholder="Enter any comments to save to your record" value="{!v.comments}"/>
+            	</div>
+                 <div class="slds-form-element">
+              			<div class="slds-form-element__control">
+                  <lightning:button label="Submit Comments" onclick="{!c.saveCommentsToMyRecord}"/>
+              </div>
+            </div>
+            </div>   
+        </aura:if>
+    </div>
+	
+        
+</aura:component>
